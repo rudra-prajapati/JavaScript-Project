@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Compiler</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #1e1e2f;
+      color: white;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .editor {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      box-sizing: border-box;
+      gap: 10px;
+    }
+
+    textarea {
+      flex: 1;
+      resize: none;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-family: monospace;
+      font-size: 14px;
+      background: #2c2c3e;
+      color: #fff;
+    }
+
+    iframe {
+      width: 50%;
+      border: none;
+      background: white;
+    }
+
+    h3 {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #28a745;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="editor">
+    <h3>HTML</h3>
+    <textarea id="htmlCode"><h1>Hello World</h1></textarea>
+
+    <h3>CSS</h3>
+    <textarea id="cssCode">h1 { color: blue; }</textarea>
+
+    <h3>JavaScript</h3>
+    <textarea id="jsCode">console.log("Hello from JS");</textarea>
+
+    <button onclick="runCode()">Run Code</button>
+  </div>
+
+  <iframe id="output"></iframe>
+</div>
+
+<script>
+function runCode() {
+  let html = document.getElementById("htmlCode").value;
+  let css = "<style>" + document.getElementById("cssCode").value + "</style>";
+  let js = "<script>" + document.getElementById("jsCode").value + "<\/script>";
+
+  let output = document.getElementById("output");
+  output.srcdoc = html + css + js;
+}
+</script>
+
+</body>
+</html>
