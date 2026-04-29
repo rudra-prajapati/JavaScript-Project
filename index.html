@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Compiler</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="editor">
+    <h3>HTML</h3>
+    <textarea id="htmlCode"><h1>Hello World</h1></textarea>
+
+    <h3>CSS</h3>
+    <textarea id="cssCode">h1 { color: blue; }</textarea>
+
+    <h3>JavaScript</h3>
+    <textarea id="jsCode">console.log("Hello from JS");</textarea>
+
+    <button onclick="runCode()">Run Code</button>
+  </div>
+
+  <iframe id="output"></iframe>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
